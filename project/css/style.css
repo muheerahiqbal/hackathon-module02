@@ -1,0 +1,224 @@
+:root {
+    --primary: #6366f1;
+    --primary-hover: #4f46e5;
+    --bg-soft: #f8fafc;
+    --text-dark: #0f172a;
+    --glass: rgba(255, 255, 255, 0.85);
+}
+
+body {
+    font-family: 'Plus Jakarta Sans', sans-serif;
+    background-color: var(--bg-soft);
+    color: var(--text-dark);
+    margin: 0;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.card {
+    width: 400px;
+}
+
+.font {
+    font-family: 'Courier New', Courier, monospace;
+
+}
+
+.navbar {
+    padding: 0.8rem 0;
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    background: var(--glass) !important;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+.navbar-brand {
+    font-weight: 800;
+    font-size: 1.6rem;
+    color: var(--primary) !important;
+    letter-spacing: -1px;
+}
+
+.nav-search-container {
+    position: relative;
+    width: 40%;
+}
+
+.nav-search-container input {
+    width: 100%;
+    padding: 8px 20px;
+    border-radius: 50px;
+    border: 1px solid #e2e8f0;
+    background: #f1f5f9;
+    transition: all 0.3s ease;
+}
+
+.nav-search-container input:focus {
+    outline: none;
+    background: #fff;
+    border-color: var(--primary);
+    box-shadow: 0 0 0 4px rgba(99, 102, 241, 0.1);
+}
+
+.hero {
+    padding: 120px 0 80px;
+    display: flex;
+    align-items: center;
+    gap: 60px;
+}
+
+.hero-left h1 {
+    font-weight: 800;
+    font-size: clamp(2.5rem, 5vw, 3.8rem);
+    line-height: 1.05;
+    letter-spacing: -2px;
+    margin-bottom: 24px;
+    background: linear-gradient(135deg, #0f172a 30%, #6366f1 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.hero-left p {
+    font-size: 1.2rem;
+    color: #64748b;
+    line-height: 1.6;
+    margin-bottom: 32px;
+    max-width: 500px;
+}
+
+.hero-right img {
+    width: 100%;
+    border-radius: 30px;
+    box-shadow: 0 30px 60px rgba(15, 23, 42, 0.15);
+    transform: perspective(1000px) rotateY(-5deg) rotateX(5deg);
+    transition: all 0.6s ease;
+}
+
+.hero-right img:hover {
+    transform: perspective(1000px) rotateY(0deg) rotateX(0deg) scale(1.03);
+}
+
+.btn-pill {
+    border-radius: 50px;
+    padding: 12px 32px;
+    font-weight: 700;
+    transition: all 0.3s ease;
+}
+
+.btn-primary-glow {
+    background: var(--primary);
+    color: #fff;
+    border: none;
+    box-shadow: 0 10px 20px rgba(99, 102, 241, 0.2);
+}
+
+.btn-primary-glow:hover {
+    background: var(--primary-hover);
+    transform: translateY(-3px);
+    box-shadow: 0 15px 25px rgba(99, 102, 241, 0.3);
+    color: #fff;
+}
+
+.search-section input {
+    width: 100%;
+    max-width: 650px;
+    padding: 22px 35px;
+    border-radius: 24px;
+    border: 1px solid #fff;
+    background: #fff;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.06);
+    font-size: 1.1rem;
+    transition: transform 0.3s ease;
+}
+
+.search-section input:focus {
+    transform: translateY(-5px);
+    outline: none;
+}
+
+@media (max-width: 991px) {
+    .hero {
+        flex-direction: column;
+        text-align: center;
+        padding-top: 60px;
+    }
+
+    .hero-left p {
+        margin: 0 auto 30px;
+    }
+
+    .hero-right img {
+        transform: rotate(0);
+    }
+}
+
+.gradient-heading {
+    background: linear-gradient(135deg, #0f172a 30%, #6366f1 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    font-weight: 800;
+}
+
+body.light-theme {
+    background-color: #f8f9fa;
+    /* normal light background */
+    color: #000;
+    /* dark text */
+}
+
+body.dark-theme {
+    background-color: #d9d9d9;
+    /* soft grey background */
+    color: #1a1a1a;
+    /* dark text for readability */
+}
+
+.navbar,
+.footer {
+    transition: background 0.3s, color 0.3s;
+}
+
+body.dark-theme .navbar,
+body.dark-theme .footer {
+    background-color: #e3e3e3 !important;
+    /* slightly lighter grey */
+    color: #1a1a1a;
+}
+
+body.dark-theme a,
+body.dark-theme a:hover,
+body.dark-theme a:focus {
+    color: #0d6efd;
+    /* primary link color */
+}
+
+body.dark-theme .btn-outline-dark {
+    border-color: #1a1a1a;
+    color: #1a1a1a;
+}
+
+body.dark-theme .btn-outline-dark:hover {
+    background-color: #cfcfcf;
+    color: #000;
+}
+
+body.dark-theme .card {
+    background-color: #f0f0f0;
+    /* soft card background */
+    color: #1a1a1a;
+}
+
+body.dark-theme input,
+body.dark-theme textarea {
+    background-color: #f5f5f5;
+    /* light grey input */
+    color: #1a1a1a;
+    border-color: #ccc;
+}
